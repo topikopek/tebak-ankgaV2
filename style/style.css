@@ -4,7 +4,7 @@
   /* box-sizing: border-box; */
 }
 body {
-  background-image: url(../background/bg.png);
+  background-color: #e0f7fa;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100dvh;
