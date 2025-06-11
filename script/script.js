@@ -14,8 +14,8 @@ function getHasil(comp, player) {
     return (
       "Selamat Pilihan kamu benar<br>jawabannya ialah : " + pilihanComputer
     );
-  if (player < comp) return "Pilihanmu Rendah\nCoba lagi";
-  if (player > comp) return "Pilihanmu Tinggi\nCoba lagi";
+  if (player < comp) return "Pilihanmu Rendah!<br>Coba lagi";
+  if (player > comp) return "Pilihanmu Tinggi!<br>Coba lagi";
 }
 
 // score
