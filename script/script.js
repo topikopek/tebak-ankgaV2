@@ -44,9 +44,6 @@ pilihan.forEach(function (pil) {
       }
       if (kesempatan !== 0) {
         info.innerHTML = hasil + `<br>Sisa kesempatan: ${kesempatan - 1}`;
-        console.log(pilihanComputer);
-        console.log(pilihanPlayer);
-        console.log(hasil);
         kesempatan--;
       }
 
@@ -63,7 +60,6 @@ pilihan.forEach(function (pil) {
 
 //   tombol reset
 tombolReset.addEventListener("click", function () {
-  console.log("Sebelum klik, kesempatan =", kesempatan);
   if (kesempatan == 0) {
     info.innerHTML =
       "Pilih angkamu dan tebak berapa angka ku!!<br>Kamu punya 3 Kesempatan";
