@@ -19,14 +19,16 @@ function getHasil(comp, player) {
 }
 
 // score
-let scoreLose = 0;
+let scoreMatch = 0;
 let scoreWin = 0;
+let scoreLose = 0;
 let kesempatan = 3;
 
 // pilihan computer
 let pilihanComputer = getPilihanComputer();
 const winCount = document.querySelector(".win-count");
 const loseCount = document.querySelector(".lose-count");
+const matchCount = document.querySelector(".match-count");
 const pilihan = document.querySelectorAll(".angka p");
 const tombolReset = document.querySelector(".lagi");
 
@@ -38,6 +40,8 @@ pilihan.forEach(function (pil) {
       const hasil = getHasil(pilihanComputer, pilihanPlayer);
       if (pilihanPlayer === pilihanComputer) {
         info.innerHTML = hasil;
+        scoreMatch++;
+        matchCount.textContent = scoreMatch;
         scoreWin++;
         winCount.textContent = scoreWin;
         kesempatan = 0;
@@ -51,6 +55,8 @@ pilihan.forEach(function (pil) {
         info.innerHTML =
           "Game Over! <br>Kamu kehabisan kesempatan.<br> jawabannya ialah : " +
           pilihanComputer;
+        scoreMatch++;
+        matchCount.textContent = scoreMatch;
         scoreLose++;
         loseCount.textContent = scoreLose;
       }
