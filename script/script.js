@@ -49,7 +49,7 @@ pilihan.forEach(function (pil) {
         console.log(hasil);
         kesempatan--;
       }
-      if (pilihanPlayer === pilihanComputer) return;
+
       if (kesempatan === 0 && pilihanPlayer !== pilihanComputer) {
         info.innerHTML =
           "Game Over! <br>Kamu kehabisan kesempatan.<br> jawabannya ialah : " +
@@ -59,12 +59,20 @@ pilihan.forEach(function (pil) {
       }
     }
   });
+});
 
-  //   tombol reset
-  tombolReset.addEventListener("click", function () {
-    kesempatan = 3;
-    pilihanComputer = getPilihanComputer();
+//   tombol reset
+tombolReset.addEventListener("click", function () {
+  console.log("Sebelum klik, kesempatan =", kesempatan);
+  if (kesempatan == 0) {
     info.innerHTML =
       "Pilih angkamu dan tebak berapa angka ku!!<br>Kamu punya 3 Kesempatan";
-  });
+    kesempatan = 3;
+    pilihanComputer = getPilihanComputer();
+  } else if (kesempatan == 3) {
+    info.innerHTML = "permainan belum dimulai";
+  } else {
+    info.innerHTML =
+      "selesaikan permainan terlebih dahulu, baru bisa main lagi";
+  }
 });
